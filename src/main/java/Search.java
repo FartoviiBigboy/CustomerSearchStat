@@ -32,7 +32,7 @@ public class Search implements Repository<Customer> {
 
     public void findByJSON(String inputJsonFileName, String outputJsonFileName) throws IOException {
         ArrayList<ArrayList<Customer>> customers = new ArrayList<>();
-        Path path = Paths.get(outputJsonFileName);
+        JSONObject result;
 
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             JSONArray listOfCriterias = getListOfCriterias(inputJsonFileName);
@@ -48,15 +48,12 @@ public class Search implements Repository<Customer> {
                     }
                 }
             }
-
-            JSONObject result = generateOutput(listOfCriterias, customers);
-            Files.write(path, result.toJSONString().getBytes());
-
+            result = generateOutput(listOfCriterias, customers);
         } catch (Exception e) {
-            JSONObject result = generateError(e);
-            Files.write(path, result.toJSONString().getBytes());
+            result = generateError(e);
         }
 
+        Files.write(Paths.get(outputJsonFileName), result.toJSONString().getBytes());
     }
 
     private JSONArray getListOfCriterias(String inputJsonFileName) throws IOException, ParseException {
