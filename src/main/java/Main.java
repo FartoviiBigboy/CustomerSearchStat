@@ -1,4 +1,5 @@
 import java.io.FileReader;
+import java.io.IOException;
 import java.nio.charset.Charset;
 import java.sql.*;
 import java.sql.Date;
@@ -11,7 +12,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws Exception {
         System.out.println(Charset.defaultCharset().displayName());
 
         if (true) {
