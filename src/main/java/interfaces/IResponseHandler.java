@@ -1,3 +1,5 @@
+package interfaces;
+
 import org.json.simple.JSONObject;
 
 import java.sql.Connection;

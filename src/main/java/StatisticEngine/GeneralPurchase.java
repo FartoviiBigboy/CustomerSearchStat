@@ -1,3 +1,5 @@
+package StatisticEngine;
+
 public class GeneralPurchase {
     private final String goodsName;
     private final double sum;

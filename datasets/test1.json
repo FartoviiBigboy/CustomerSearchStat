@@ -1,0 +1,25 @@
+{
+  "criterias": [
+    {
+      "lastName": "Архипов"
+    },
+    {
+      "productName": "яйца",
+      "minTimes": 2
+    },
+    {
+      "productName": "молоко",
+      "minTimes": 3
+    },
+    {
+      "minExpenses": 112,
+      "maxExpenses": 500
+    },
+    {
+      "badCustomers": 3
+    },
+    {
+      "lastName": "Шурупов"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+package SearchEngine;
+
 public class Customer {
     private final String lastName;
     private final String firstName;
